@@ -1,5 +1,6 @@
 <div class="card border-primary"
-     [class.hover]="useHover" [class.border-success]="success" [class.border-danger]="danger"
+     [class.hover]="useHover" [class.border-success]="success"
+     [class.bg-light-green]="success" [class.border-danger]="danger" [class.bg-light-red]="danger"
      [class.h-100]="autoHeight">
   <img class="card-img-top" [src]="imageUrl" *ngIf="hasImage"/>
   <div class="card-body">
