@@ -11,6 +11,7 @@ import {GhostType} from "./ghost-type.model";
 })
 export class PhasmaphobiaHelperComponent implements OnInit {
   public allPrimaryEvidence = ALL_PRIMARY_EVIDENCE;
+  public allGhostTypes = GHOST_TYPES;
 
   public get foundEvidence(): PrimaryEvidence[] {
     return ALL_PRIMARY_EVIDENCE.filter((evidence) => {
@@ -19,7 +20,7 @@ export class PhasmaphobiaHelperComponent implements OnInit {
   }
 
   public get viableGhostTypes(): GhostType[] {
-    return GHOST_TYPES.filter((ghostType) => {
+    return this.allGhostTypes.filter((ghostType) => {
       return this.isGhostTypeViable(ghostType);
     });
   }

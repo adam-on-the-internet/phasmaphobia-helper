@@ -58,7 +58,11 @@
         </ul>
       </div>
       <div class="col-md-6">
-        <h2>Ghost Types <small>{{viableGhostTypes.length}} possible</small></h2>
+        <h2>
+          Ghost Types
+          <small>{{viableGhostTypes.length}} possible, {{allGhostTypes.length - viableGhostTypes.length}}
+            eliminated</small>
+        </h2>
         <div class="row">
           <ng-container *ngFor="let ghostType of viableGhostTypes; let j = index">
             <div class="col-md-6 mb-3">
@@ -73,6 +77,15 @@
                         </button>
                       </div>
                       <div class="modal-body">
+                        <p>
+                          Primary Evidence:
+                        </p>
+                        <ul class="list-group">
+                          <li class="list-group-item" *ngFor="let primaryEvidence of ghostType.primaryEvidence">
+                            {{primaryEvidence.name}}
+                          </li>
+                        </ul>
+                        <hr>
                         <p>
                           Secondary Evidence:
                         </p>
