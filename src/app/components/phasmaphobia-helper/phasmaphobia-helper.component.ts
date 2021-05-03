@@ -25,6 +25,12 @@ export class PhasmaphobiaHelperComponent implements OnInit {
     });
   }
 
+  public get nonviableGhostTypes(): GhostType[] {
+    return this.allGhostTypes.filter((ghostType) => {
+      return !this.isGhostTypeViable(ghostType);
+    });
+  }
+
   public ngOnInit() {
     this.reset();
   }

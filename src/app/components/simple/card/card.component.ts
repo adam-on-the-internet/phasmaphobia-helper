@@ -13,6 +13,8 @@ export class CardComponent {
   @Input() public autoHeight = true;
   @Input() public imageUrl: string = null;
   @Input() public useHover = false;
+  @Input() public success = false;
+  @Input() public danger = false;
 
   public get hasImage(): boolean {
     return BooleanHelper.hasValue(this.imageUrl);
