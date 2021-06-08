@@ -65,6 +65,9 @@ export class PhasmaphobiaHelperComponent implements OnInit {
 
   public markFound(evidence: PrimaryEvidence): void {
     evidence.status = EvidenceStatus.FOUND;
+    if (this.viableGhostTypes.length <= 2) {
+      this.showSecondary = true;
+    }
   }
 
   public markEliminated(evidence: PrimaryEvidence): void {
