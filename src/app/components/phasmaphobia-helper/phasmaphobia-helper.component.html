@@ -3,7 +3,9 @@
     <div class="row py-3">
       <div class="col-md-6 mb-3">
         <h2 class="text-white">
+          <i class="fa fa-check-square-o"></i>
           Evidence
+          <small>{{foundEvidence.length}} of 3</small>
           <button class="btn btn-secondary pull-right" (click)="reset()">
             <i class="fa fa-repeat"></i>
             RESET
@@ -17,7 +19,7 @@
             >
               <button type="button" class="btn btn-outline-primary" data-toggle="modal"
                       [attr.data-target]="'#evidence-modal-' + i">
-                <i class="fa fa-info-circle"></i>
+                <i class="fa fa-fw" [ngClass]="evidence.icon"></i>
               </button>
               <div class="modal fade" id="evidence-modal-{{i}}" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
