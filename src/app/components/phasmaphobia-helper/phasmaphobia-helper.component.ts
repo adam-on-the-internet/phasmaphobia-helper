@@ -33,6 +33,10 @@ export class PhasmaphobiaHelperComponent implements OnInit {
     });
   }
 
+  public get sortedGhostTypes(): GhostType[] {
+    return this.viableGhostTypes.concat(this.nonviableGhostTypes);
+  }
+
   public get viableGhostTypes(): GhostType[] {
     return this.allGhostTypes.filter((ghostType) => {
       return this.isGhostTypeViable(ghostType);
@@ -99,7 +103,11 @@ export class PhasmaphobiaHelperComponent implements OnInit {
     return evidence.status === EvidenceStatus.ELIMINATED || !this.isEvidenceViable(evidence);
   }
 
-  private isGhostTypeViable(ghostType: GhostType): boolean {
+  public isGhostCertainly(ghostType: GhostType): boolean {
+    return this.isGhostTypeViable(ghostType) && this.viableGhostTypes.length === 1;
+  }
+
+  public isGhostTypeViable(ghostType: GhostType): boolean {
     return this.noRequiredEvidenceEliminated(ghostType)
       && this.remainingEvidencePossible(ghostType);
   }
