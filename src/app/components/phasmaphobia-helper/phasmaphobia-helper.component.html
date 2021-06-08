@@ -6,11 +6,13 @@
           <i class="fa fa-check-square-o"></i>
           Evidence
           <small>{{foundEvidence.length}} of 3</small>
-          <button class="btn btn-secondary pull-right" (click)="reset()">
+        </h2>
+        <h3>
+          <button class="btn btn-outline-light btn-block" (click)="reset()">
             <i class="fa fa-repeat"></i>
             RESET
           </button>
-        </h2>
+        </h3>
         <ul class="list-group">
           <ng-container *ngFor="let evidence of sortedEvidence; let i = index">
             <li class="list-group-item"
