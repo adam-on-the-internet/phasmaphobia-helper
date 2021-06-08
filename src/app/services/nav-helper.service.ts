@@ -22,10 +22,6 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.Phasmaphobia);
   }
 
-  public goBookmarkOverview(): void {
-    this.goToRoute(ROUTES_ENUM.BookmarkOverview);
-  }
-
   // GENERAL
 
   private goToRoute(route: string): void {
