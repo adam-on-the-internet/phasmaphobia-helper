@@ -14,6 +14,10 @@ export class PhasmaphobiaHelperComponent implements OnInit {
   public allGhostTypes = GHOST_TYPES;
   public showSecondary = false;
 
+  public get showSecondaryEvidence(): boolean {
+    return this.viableGhostTypes.length <= 2;
+  }
+
   public get sortedEvidence(): PrimaryEvidence[] {
     const impossible = this.allPrimaryEvidence.filter((e) => {
       return this.evidenceImpossible(e);
@@ -53,10 +57,6 @@ export class PhasmaphobiaHelperComponent implements OnInit {
     this.reset();
   }
 
-  public toggleSecondary() {
-    this.showSecondary = !this.showSecondary;
-  }
-
   public reset() {
     ALL_PRIMARY_EVIDENCE.forEach((evidence) => {
       evidence.status = EvidenceStatus.UNKNOWN;
@@ -66,9 +66,6 @@ export class PhasmaphobiaHelperComponent implements OnInit {
 
   public markFound(evidence: PrimaryEvidence): void {
     evidence.status = EvidenceStatus.FOUND;
-    if (this.viableGhostTypes.length <= 2) {
-      this.showSecondary = true;
-    }
   }
 
   public markEliminated(evidence: PrimaryEvidence): void {
