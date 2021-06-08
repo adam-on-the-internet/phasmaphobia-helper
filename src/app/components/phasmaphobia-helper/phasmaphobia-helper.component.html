@@ -10,7 +10,7 @@
           </button>
         </h2>
         <ul class="list-group">
-          <ng-container *ngFor="let evidence of allPrimaryEvidence; let i = index">
+          <ng-container *ngFor="let evidence of sortedEvidence; let i = index">
             <li class="list-group-item"
                 [class.list-group-item-success]="evidenceConfirmed(evidence)"
                 [class.list-group-item-danger]="evidenceImpossible(evidence)"

@@ -13,6 +13,19 @@ export class PhasmaphobiaHelperComponent implements OnInit {
   public allPrimaryEvidence = ALL_PRIMARY_EVIDENCE;
   public allGhostTypes = GHOST_TYPES;
 
+  public get sortedEvidence(): PrimaryEvidence[] {
+    const impossible = this.allPrimaryEvidence.filter((e) => {
+      return this.evidenceImpossible(e);
+    });
+    const confirmed = this.allPrimaryEvidence.filter((e) => {
+      return this.evidenceConfirmed(e);
+    });
+    const other = this.allPrimaryEvidence.filter((e) => {
+      return !this.evidenceConfirmed(e) && !this.evidenceImpossible(e);
+    });
+    return other.concat(confirmed, impossible);
+  }
+
   public get foundEvidence(): PrimaryEvidence[] {
     return ALL_PRIMARY_EVIDENCE.filter((evidence) => {
       return evidence.status === EvidenceStatus.FOUND;
