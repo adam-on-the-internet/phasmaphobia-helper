@@ -12,6 +12,7 @@ import {GhostType} from "./ghost-type.model";
 export class PhasmaphobiaHelperComponent implements OnInit {
   public allPrimaryEvidence = ALL_PRIMARY_EVIDENCE;
   public allGhostTypes = GHOST_TYPES;
+  public showSecondary = false;
 
   public get sortedEvidence(): PrimaryEvidence[] {
     const impossible = this.allPrimaryEvidence.filter((e) => {
@@ -46,6 +47,10 @@ export class PhasmaphobiaHelperComponent implements OnInit {
 
   public ngOnInit() {
     this.reset();
+  }
+
+  public toggleSecondary() {
+    this.showSecondary = !this.showSecondary;
   }
 
   public reset() {
