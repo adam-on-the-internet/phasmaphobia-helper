@@ -1,7 +1,7 @@
 <div class="bg-dark">
   <div class="container">
-    <div class="row py-3">
-      <div class="col-md-6 mb-3">
+    <div class="row pt-1">
+      <div class="col-md-6 mb-2">
         <h2 class="text-white">
           <i class="fa fa-check-square-o"></i>
           Evidence
@@ -13,76 +13,76 @@
             RESET EVIDENCE
           </button>
         </h3>
-        <ul class="list-group">
-          <ng-container *ngFor="let evidence of sortedEvidence; let i = index">
-            <li class="list-group-item border border-dark"
-                [class.list-group-item-success]="evidenceConfirmed(evidence)"
-                [class.list-group-item-danger]="evidenceImpossible(evidence)"
-            >
-              <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                      [attr.data-target]="'#evidence-modal-' + i">
-                <i class="fa fa-fw" [ngClass]="evidence.icon"></i>
-              </button>
-              <div class="modal fade" id="evidence-modal-{{i}}" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Evidence: {{evidence.name}}</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      {{evidence.details}}
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-group">
+              <ng-container *ngFor="let evidence of sortedEvidence; let i = index">
+                <li class="list-group-item border border-dark"
+                    [class.list-group-item-success]="evidenceConfirmed(evidence)"
+                    [class.list-group-item-danger]="evidenceImpossible(evidence)"
+                >
+                  <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                          [attr.data-target]="'#evidence-modal-' + i">
+                    <i class="fa fa-fw" [ngClass]="evidence.icon"></i>
+                  </button>
+                  <div class="modal fade" id="evidence-modal-{{i}}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Evidence: {{evidence.name}}</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          {{evidence.details}}
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              {{evidence.name}}
-              <div class="btn-group pull-right" role="group">
-                <button type="button" class="btn btn-outline-primary" (click)="markUnknown(evidence)"
-                        [disabled]="cannotDeselectEvidence(evidence)"
-                        [class.active]="showEvidenceUnknown(evidence)"><i
-                  class="fa fa-question"></i></button>
-                <button type="button" class="btn btn-outline-primary" (click)="markFound(evidence)"
-                        [disabled]="!isEvidenceViable(evidence)"
-                        [class.active]="evidenceConfirmed(evidence)"><i
-                  class="fa fa-check"></i></button>
-                <button type="button" class="btn btn-outline-primary" (click)="markEliminated(evidence)"
-                        [disabled]="cannotBeEliminated(evidence)"
-                        [class.active]="evidenceImpossible(evidence)"><i
-                  class="fa fa-times"></i></button>
-              </div>
-            </li>
-          </ng-container>
-        </ul>
+                  {{evidence.name}}
+                  <div class="btn-group pull-right" role="group">
+                    <button type="button" class="btn btn-outline-primary" (click)="markUnknown(evidence)"
+                            [disabled]="cannotDeselectEvidence(evidence)"
+                            [class.active]="showEvidenceUnknown(evidence)"><i
+                      class="fa fa-question"></i></button>
+                    <button type="button" class="btn btn-outline-primary" (click)="markFound(evidence)"
+                            [disabled]="!isEvidenceViable(evidence)"
+                            [class.active]="evidenceConfirmed(evidence)"><i
+                      class="fa fa-check"></i></button>
+                    <button type="button" class="btn btn-outline-primary" (click)="markEliminated(evidence)"
+                            [disabled]="cannotBeEliminated(evidence)"
+                            [class.active]="evidenceImpossible(evidence)"><i
+                      class="fa fa-times"></i></button>
+                  </div>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="col-md-6">
         <h2 class="text-white">
           <i class="fa fa-snapchat-ghost"></i>
           Ghost Types
-          <small>{{viableGhostTypes.length}} possible of 12</small>
+          <small>{{viableGhostTypes.length}} left</small>
         </h2>
-        <div class="row">
-          <div class="col-md-12 mx-0 my-0 px-0 py-0">
-            <h3>
-              <button class="btn btn-outline-light btn-block" (click)="toggleSecondary()">
+        <h3>
+          <button class="btn btn-outline-light btn-block" (click)="toggleSecondary()">
                 <span *ngIf="showSecondary">
                 <i class="fa fa-eye-slash mr-1"></i>
                   HIDE
                 </span>
-                <span *ngIf="!showSecondary">
+            <span *ngIf="!showSecondary">
                 <i class="fa fa-eye mr-1"></i>
                   SHOW
                 </span>
-                SECONDARY
-              </button>
-            </h3>
-          </div>
-        </div>
+            SECONDARY
+          </button>
+        </h3>
         <div class="row">
           <ng-container *ngFor="let ghostType of sortedGhostTypes; let j = index">
             <div class="col-md-6 mx-0 my-0 px-0 py-0">

@@ -61,6 +61,7 @@ export class PhasmaphobiaHelperComponent implements OnInit {
     ALL_PRIMARY_EVIDENCE.forEach((evidence) => {
       evidence.status = EvidenceStatus.UNKNOWN;
     });
+    this.showSecondary = false;
   }
 
   public markFound(evidence: PrimaryEvidence): void {
