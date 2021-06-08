@@ -126,7 +126,13 @@
                 </h4>
                 <ul class="list-group">
                   <ng-container *ngFor="let evidence of ghostType.primaryEvidence">
-                    <li class="list-group-item" *ngIf="!evidenceConfirmed(evidence)">
+                    <li class="list-group-item" *ngIf="!evidenceConfirmed(evidence) && !evidenceImpossible(evidence)">
+                      {{evidence.name}}
+                    </li>
+                  </ng-container>
+                  <ng-container *ngFor="let evidence of ghostType.primaryEvidence">
+                    <li class="list-group-item" *ngIf="evidenceImpossible(evidence)">
+                      <i class="fa fa-times"></i>
                       {{evidence.name}}
                     </li>
                   </ng-container>
