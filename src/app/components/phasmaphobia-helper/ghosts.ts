@@ -159,6 +159,31 @@ export const ONI: GhostType = {
   ],
 };
 
+export const YOKAI: GhostType = {
+  name: "Yokai",
+  primaryEvidence: [
+    SPIRIT_BOX,
+    GHOST_WRITING,
+    GHOST_ORBS
+  ],
+  secondaryEvidence: [
+    "attacks more often when players talk nearby",
+    "while hunting, can only hear nearby voices"
+  ],
+};
+
+export const HANTU: GhostType = {
+  name: "Hantu",
+  primaryEvidence: [
+    FINGERPRINTS,
+    GHOST_WRITING,
+    GHOST_ORBS
+  ],
+  secondaryEvidence: [
+    "moves faster in colder areas, slower in warmer areas"
+  ],
+};
+
 export const GHOST_TYPES: GhostType[] = [
   SPIRIT,
   ONI,
@@ -172,4 +197,6 @@ export const GHOST_TYPES: GhostType[] = [
   POLTERGEIST,
   PHANTOM,
   WRAITH,
+  YOKAI,
+  HANTU,
 ];
