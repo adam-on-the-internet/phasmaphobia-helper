@@ -112,13 +112,15 @@
                   </div>
                 </div>
                 <h4>
-                  <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                          [attr.data-target]="'#ghost-type-modal-' + j">
-                    <i class="fa fa-info-circle"></i>
+                  <button
+                    type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    [attr.data-target]="'#ghost-type-modal-' + j">
+                    <i class="fa fa-check" *ngIf="isGhostCertainly(ghostType)"></i>
+                    <i class="fa fa-times" *ngIf="!isGhostTypeViable(ghostType)"></i>
+                    <i class="fa fa-info-circle"
+                       *ngIf="!isGhostCertainly(ghostType) && isGhostTypeViable(ghostType)"></i>
                   </button>
                   {{ghostType.name}}
-                  <i class="fa fa-check" *ngIf="isGhostCertainly(ghostType)"></i>
-                  <i class="fa fa-times" *ngIf="!isGhostTypeViable(ghostType)"></i>
                 </h4>
                 <ul class="list-group">
                   <ng-container *ngFor="let evidence of ghostType.primaryEvidence">
