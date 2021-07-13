@@ -129,19 +129,21 @@
                     </li>
                   </ng-container>
                   <ng-container *ngFor="let evidence of ghostType.primaryEvidence">
-                    <li class="list-group-item border border-dark" *ngIf="evidenceImpossible(evidence)">
+                    <li class="strike list-group-item list-group-item-light border border-dark"
+                        *ngIf="evidenceImpossible(evidence)">
                       <i class="fa fa-times fa-fw"></i>
                       {{evidence.name}}
                     </li>
                   </ng-container>
                   <ng-container *ngFor="let evidence of ghostType.primaryEvidence">
-                    <li class="list-group-item border border-dark" *ngIf="evidenceConfirmed(evidence)">
+                    <li class="strike list-group-item list-group-item-light border border-dark"
+                        *ngIf="evidenceConfirmed(evidence)">
                       <i class="fa fa-check fa-fw"></i>
                       {{evidence.name}}
                     </li>
                   </ng-container>
                 </ul>
-                <ng-container *ngIf="showSecondaryEvidence">
+                <ng-container *ngIf="showSecondaryEvidence && isGhostTypeViable(ghostType)">
                   <hr>
                   <ul class="list-group">
                     <li class="list-group-item border border-dark" *ngFor="let evidence of ghostType.secondaryEvidence">
