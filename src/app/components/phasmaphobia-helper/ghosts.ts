@@ -1,10 +1,18 @@
 import {GhostType} from "./ghost-type.model";
-import {EMF_LEVEL_5, FINGERPRINTS, FREEZING_TEMPERATURE, GHOST_ORBS, GHOST_WRITING, SPIRIT_BOX} from "./evidence";
+import {
+  DOTS_PROJECTOR,
+  EMF_LEVEL_5,
+  FINGERPRINTS,
+  FREEZING_TEMPERATURE,
+  GHOST_ORBS,
+  GHOST_WRITING,
+  SPIRIT_BOX
+} from "./evidence";
 
 export const SPIRIT: GhostType = {
   name: "Spirit",
   primaryEvidence: [
-    FINGERPRINTS,
+    EMF_LEVEL_5,
     GHOST_WRITING,
     SPIRIT_BOX,
   ],
@@ -16,9 +24,9 @@ export const SPIRIT: GhostType = {
 export const WRAITH: GhostType = {
   name: "Wraith",
   primaryEvidence: [
-    FINGERPRINTS,
-    FREEZING_TEMPERATURE,
+    EMF_LEVEL_5,
     SPIRIT_BOX,
+    DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
     "flying, no footprints",
@@ -30,9 +38,9 @@ export const WRAITH: GhostType = {
 export const PHANTOM: GhostType = {
   name: "Phantom",
   primaryEvidence: [
-    EMF_LEVEL_5,
-    FREEZING_TEMPERATURE,
-    GHOST_ORBS,
+    FINGERPRINTS,
+    SPIRIT_BOX,
+    DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
     "looking at the ghost drops sanity considerably",
@@ -57,9 +65,9 @@ export const POLTERGEIST: GhostType = {
 export const BANSHEE: GhostType = {
   name: "Banshee",
   primaryEvidence: [
-    EMF_LEVEL_5,
     FINGERPRINTS,
-    FREEZING_TEMPERATURE,
+    GHOST_ORBS,
+    DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
     "targets and hunts one person at a time",
@@ -71,8 +79,8 @@ export const JINN: GhostType = {
   name: "Jinn",
   primaryEvidence: [
     EMF_LEVEL_5,
-    GHOST_ORBS,
-    SPIRIT_BOX,
+    FINGERPRINTS,
+    FREEZING_TEMPERATURE,
   ],
   secondaryEvidence: [
     "territorial ghost that attacks when threatened",
@@ -84,8 +92,8 @@ export const JINN: GhostType = {
 export const MARE: GhostType = {
   name: "Mare",
   primaryEvidence: [
-    FREEZING_TEMPERATURE,
     GHOST_ORBS,
+    GHOST_WRITING,
     SPIRIT_BOX,
   ],
   secondaryEvidence: [
@@ -98,8 +106,8 @@ export const MARE: GhostType = {
 export const REVENANT: GhostType = {
   name: "Revenant",
   primaryEvidence: [
-    EMF_LEVEL_5,
-    FINGERPRINTS,
+    FREEZING_TEMPERATURE,
+    GHOST_ORBS,
     GHOST_WRITING,
   ],
   secondaryEvidence: [
@@ -112,7 +120,7 @@ export const SHADE: GhostType = {
   name: "Shade",
   primaryEvidence: [
     EMF_LEVEL_5,
-    GHOST_ORBS,
+    FREEZING_TEMPERATURE,
     GHOST_WRITING,
   ],
   secondaryEvidence: [
@@ -123,9 +131,9 @@ export const SHADE: GhostType = {
 export const DEMON: GhostType = {
   name: "Demon",
   primaryEvidence: [
+    FINGERPRINTS,
     FREEZING_TEMPERATURE,
     GHOST_WRITING,
-    SPIRIT_BOX,
   ],
   secondaryEvidence: [
     "attacks often and without reason",
@@ -138,7 +146,7 @@ export const YUREI: GhostType = {
   primaryEvidence: [
     FREEZING_TEMPERATURE,
     GHOST_ORBS,
-    GHOST_WRITING,
+    DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
     "reduces sanity more quickly",
@@ -146,12 +154,38 @@ export const YUREI: GhostType = {
   ],
 };
 
+export const GORYO: GhostType = {
+  name: "Goryo",
+  primaryEvidence: [
+    EMF_LEVEL_5,
+    FINGERPRINTS,
+    DOTS_PROJECTOR,
+  ],
+  secondaryEvidence: [
+    "only visible through the video camera",
+    "rarely seen far away from their place of death",
+  ],
+};
+
+export const MYLING: GhostType = {
+  name: "Myling",
+  primaryEvidence: [
+    EMF_LEVEL_5,
+    FINGERPRINTS,
+    GHOST_WRITING
+  ],
+  secondaryEvidence: [
+    "makes paranormal sounds",
+    "quieter when hunting",
+  ],
+};
+
 export const ONI: GhostType = {
   name: "Oni",
   primaryEvidence: [
     EMF_LEVEL_5,
-    GHOST_WRITING,
-    SPIRIT_BOX,
+    FREEZING_TEMPERATURE,
+    DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
     "objects moved at great speeds",
@@ -162,9 +196,9 @@ export const ONI: GhostType = {
 export const YOKAI: GhostType = {
   name: "Yokai",
   primaryEvidence: [
+    GHOST_ORBS,
     SPIRIT_BOX,
-    GHOST_WRITING,
-    GHOST_ORBS
+    DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
     "attacks more often when players talk nearby",
@@ -176,8 +210,8 @@ export const HANTU: GhostType = {
   name: "Hantu",
   primaryEvidence: [
     FINGERPRINTS,
-    GHOST_WRITING,
-    GHOST_ORBS
+    FREEZING_TEMPERATURE,
+    GHOST_ORBS,
   ],
   secondaryEvidence: [
     "moves faster in colder areas, slower in warmer areas"
@@ -199,4 +233,6 @@ export const GHOST_TYPES: GhostType[] = [
   WRAITH,
   YOKAI,
   HANTU,
+  GORYO,
+  MYLING,
 ];

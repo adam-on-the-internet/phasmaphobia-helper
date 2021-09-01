@@ -36,6 +36,12 @@ export const SPIRIT_BOX: PrimaryEvidence = {
   icon: "fa-microphone",
 };
 
+export const DOTS_PROJECTOR: PrimaryEvidence = {
+  name: "DOTS projector",
+  details: "Detected by ???",
+  icon: "fa-dot-circle-o",
+};
+
 export const ALL_PRIMARY_EVIDENCE = [
   EMF_LEVEL_5,
   FINGERPRINTS,
@@ -43,4 +49,5 @@ export const ALL_PRIMARY_EVIDENCE = [
   GHOST_ORBS,
   GHOST_WRITING,
   SPIRIT_BOX,
+  DOTS_PROJECTOR,
 ];
