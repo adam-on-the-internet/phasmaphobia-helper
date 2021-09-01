@@ -21,7 +21,7 @@ export const FREEZING_TEMPERATURE: PrimaryEvidence = {
 export const GHOST_ORBS: PrimaryEvidence = {
   name: "Ghost orbs",
   details: "Detected by finding Ghost Orbs on a Video Camera with Night Vision in the Ghost Room.",
-  icon: "fa-circle-o",
+  icon: "fa-camera",
 };
 
 export const GHOST_WRITING: PrimaryEvidence = {
@@ -38,7 +38,7 @@ export const SPIRIT_BOX: PrimaryEvidence = {
 
 export const DOTS_PROJECTOR: PrimaryEvidence = {
   name: "DOTS projector",
-  details: "Detected by ???",
+  details: "Detected by spotting a silhouette in the projection, with the naked eye or a camera",
   icon: "fa-dot-circle-o",
 };
 
