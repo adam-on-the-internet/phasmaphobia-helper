@@ -55,7 +55,7 @@ export const POLTERGEIST: GhostType = {
   primaryEvidence: [
     FINGERPRINTS,
     SPIRIT_BOX,
-    GHOST_ORBS,
+    GHOST_WRITING,
   ],
   secondaryEvidence: [
     "throws multiple objects at once",
