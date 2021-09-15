@@ -10,6 +10,7 @@ import {GhostType} from "./ghost-type.model";
   styleUrls: ["./phasmaphobia-helper.component.scss"]
 })
 export class PhasmaphobiaHelperComponent implements OnInit {
+
   public allPrimaryEvidence = ALL_PRIMARY_EVIDENCE;
   public allGhostTypes = GHOST_TYPES;
   public showSecondary = false;
