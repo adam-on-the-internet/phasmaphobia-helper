@@ -16,7 +16,7 @@ export class PhasmaphobiaHelperComponent implements OnInit {
   public showSecondary = false;
 
   public get showSecondaryEvidence(): boolean {
-    return this.viableGhostTypes.length <= 2;
+    return this.viableGhostTypes.length <= 4;
   }
 
   public get sortedEvidence(): PrimaryEvidence[] {
