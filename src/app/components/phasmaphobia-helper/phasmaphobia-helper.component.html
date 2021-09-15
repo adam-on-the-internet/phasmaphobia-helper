@@ -46,19 +46,24 @@
                   <span [class.strike]="evidenceConfirmed(evidence) || evidenceImpossible(evidence)">
                   {{evidence.name}}
                   </span>
-                  <div class="btn-group pull-right" role="group">
-                    <button type="button" class="btn btn-outline-primary" (click)="markUnknown(evidence)"
-                            [disabled]="cannotDeselectEvidence(evidence)"
-                            [class.active]="showEvidenceUnknown(evidence)"><i
-                      class="fa fa-question"></i></button>
-                    <button type="button" class="btn btn-outline-primary" (click)="markFound(evidence)"
-                            [disabled]="!isEvidenceViable(evidence)"
-                            [class.active]="evidenceConfirmed(evidence)"><i
-                      class="fa fa-check"></i></button>
-                    <button type="button" class="btn btn-outline-primary" (click)="markEliminated(evidence)"
-                            [disabled]="cannotBeEliminated(evidence)"
-                            [class.active]="evidenceImpossible(evidence)"><i
-                      class="fa fa-times"></i></button>
+                  <div class="pull-right">
+                    <span *ngIf="isEvidenceViable(evidence) && !evidenceConfirmed(evidence)">
+                      {{getEvidenceMatchCountString(evidence)}}
+                    </span>
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-outline-primary" (click)="markUnknown(evidence)"
+                              [disabled]="cannotDeselectEvidence(evidence)"
+                              [class.active]="showEvidenceUnknown(evidence)"><i
+                        class="fa fa-question"></i></button>
+                      <button type="button" class="btn btn-outline-primary" (click)="markFound(evidence)"
+                              [disabled]="!isEvidenceViable(evidence)"
+                              [class.active]="evidenceConfirmed(evidence)"><i
+                        class="fa fa-check"></i></button>
+                      <button type="button" class="btn btn-outline-primary" (click)="markEliminated(evidence)"
+                              [disabled]="cannotBeEliminated(evidence)"
+                              [class.active]="evidenceImpossible(evidence)"><i
+                        class="fa fa-times"></i></button>
+                    </div>
                   </div>
                 </li>
               </ng-container>

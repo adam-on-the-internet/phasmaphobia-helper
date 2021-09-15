@@ -58,6 +58,12 @@ export class PhasmaphobiaHelperComponent implements OnInit {
     this.reset();
   }
 
+  public getEvidenceMatchCountString(evidence: PrimaryEvidence): string {
+    const count = this.getEvidenceMatchCountNumber(evidence);
+    const ending = count > 1 ? "es" : "";
+    return count + " match" + ending;
+  }
+
   public reset() {
     ALL_PRIMARY_EVIDENCE.forEach((evidence) => {
       evidence.status = EvidenceStatus.UNKNOWN;
@@ -125,6 +131,13 @@ export class PhasmaphobiaHelperComponent implements OnInit {
       return evidence.status !== EvidenceStatus.FOUND;
     });
     return this.foundEvidence.length + requiredEvidenceNotYetFound.length <= 3;
+  }
+
+  private getEvidenceMatchCountNumber(evidence: PrimaryEvidence): number {
+    const matchingTypes = this.viableGhostTypes.filter((ghostType) => {
+      return ghostType.primaryEvidence.includes(evidence);
+    });
+    return matchingTypes.length;
   }
 
 }
