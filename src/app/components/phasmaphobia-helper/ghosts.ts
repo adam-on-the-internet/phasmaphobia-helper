@@ -218,6 +218,50 @@ export const HANTU: GhostType = {
   ],
 };
 
+export const ONRYO: GhostType = {
+  name: "Onryo",
+  primaryEvidence: [
+    SPIRIT_BOX,
+    GHOST_ORBS,
+    FREEZING_TEMPERATURE,
+  ],
+  secondaryEvidence: [
+  ],
+};
+
+export const THE_TWINS: GhostType = {
+  name: "The Twins",
+  primaryEvidence: [
+    EMF_LEVEL_5,
+    SPIRIT_BOX,
+    FREEZING_TEMPERATURE,
+  ],
+  secondaryEvidence: [
+  ],
+};
+
+export const RAIJU: GhostType = {
+  name: "Raiju",
+  primaryEvidence: [
+    EMF_LEVEL_5,
+    GHOST_ORBS,
+    DOTS_PROJECTOR,
+  ],
+  secondaryEvidence: [
+  ],
+};
+
+export const OBAKE: GhostType = {
+  name: "Obake",
+  primaryEvidence: [
+    EMF_LEVEL_5,
+    FINGERPRINTS,
+    GHOST_ORBS,
+  ],
+  secondaryEvidence: [
+  ],
+};
+
 export const GHOST_TYPES: GhostType[] = [
   SPIRIT,
   ONI,
@@ -235,4 +279,8 @@ export const GHOST_TYPES: GhostType[] = [
   HANTU,
   GORYO,
   MYLING,
+  ONRYO,
+  THE_TWINS,
+  RAIJU,
+  OBAKE,
 ];
