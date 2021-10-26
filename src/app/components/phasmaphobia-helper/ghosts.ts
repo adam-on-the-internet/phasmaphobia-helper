@@ -226,6 +226,8 @@ export const ONRYO: GhostType = {
     FREEZING_TEMPERATURE,
   ],
   secondaryEvidence: [
+    "extinguishing a flame can cause an Onryo to attack",
+    "when threatened, this ghost will be less likely to attack",
   ],
 };
 
@@ -237,6 +239,8 @@ export const THE_TWINS: GhostType = {
     FREEZING_TEMPERATURE,
   ],
   secondaryEvidence: [
+    "either Twin can be angered and initiate an attack",
+    "the Twins will often interact with the environment at the same time",
   ],
 };
 
@@ -248,6 +252,8 @@ export const RAIJU: GhostType = {
     DOTS_PROJECTOR,
   ],
   secondaryEvidence: [
+    "a Raiju can siphon power from nearby electrical devices, making it move faster",
+    "Raiju are constantly disrupting electronic equipment, making it easier to track when attacking",
   ],
 };
 
@@ -259,6 +265,8 @@ export const OBAKE: GhostType = {
     GHOST_ORBS,
   ],
   secondaryEvidence: [
+    "when interacting with the environment, an Obake will rarely leave a trace",
+    "sometimes this ghost will shapeshift, leaving behind unique evidence",
   ],
 };
 
