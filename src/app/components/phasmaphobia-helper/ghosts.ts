@@ -270,6 +270,19 @@ export const OBAKE: GhostType = {
   ],
 };
 
+export const MIMIC: GhostType = {
+  name: "The Mimic",
+  primaryEvidence: [
+    SPIRIT_BOX,
+    FINGERPRINTS,
+    FREEZING_TEMPERATURE,
+  ],
+  secondaryEvidence: [
+    "copycat ghost that mirrors traits and behaviours from others, including other ghost types",
+    "several reports have noted ghost orb sightings near mimics",
+  ],
+};
+
 export const GHOST_TYPES: GhostType[] = [
   SPIRIT,
   ONI,
@@ -291,4 +304,5 @@ export const GHOST_TYPES: GhostType[] = [
   THE_TWINS,
   RAIJU,
   OBAKE,
+  MIMIC,
 ];
